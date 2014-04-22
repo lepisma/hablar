@@ -39,6 +39,7 @@ def hablar_server(port):
 			image = cv2.imdecode(numpy_data, 1)
 			cv2.imshow('Stream', image)
 			if cv2.waitKey(20) == 27:
+				conn.close()
 				break
 		stream_data = conn.recv(1024)
 
