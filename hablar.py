@@ -1,9 +1,11 @@
 #!/usr/bin/python
 
-# hablar 3D chat main file
+"""
+hablar 3D chat main file
 
-# Client send the video stream to the server
-# The server previews the stream
+ - Client sends the video stream to the server
+ - The server previews the stream
+"""
 
 import socket
 import numpy
@@ -14,9 +16,11 @@ import connections
 
 CONNECTION_PORT = 1111
 
-#---------------------------
-# Becoming server
 def hablar_server(port):
+	"""
+	Opens up chat session and listens for client requests
+	"""
+	
 	host = 'localhost'
 	port = port
 
@@ -46,9 +50,11 @@ def hablar_server(port):
 	cv2.destroyAllWindows()
 
 
-#---------------------------
-# Becoming client
 def hablar_client(host, port):
+	"""
+	Connects to a chat session
+	"""
+	
 	host = host
 	port = port
 

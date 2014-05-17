@@ -1,11 +1,15 @@
-# Connections handling
+"""
+Connections handling
+"""
 
 import socket
 import threading
 
-#---------------------------------
-# Defines a network thread
 class network_thread(threading.Thread):
+	"""
+	Defines a network thread
+	"""
+	
 	def __init__(self, target, *args):
 		self._target = target
 		self._args = args
@@ -14,9 +18,10 @@ class network_thread(threading.Thread):
 	def run(self):
 		self._target(*self.args)
 
-# --------------------------------
-# Creates socket server
 def create_server_here(host, port):
+	"""
+	Creates a socket server
+	"""
 	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	try:
 		sock.bind((host, port))
@@ -25,9 +30,11 @@ def create_server_here(host, port):
 		sys.exit()
 	return sock
 
-# --------------------------------
-# Connects to socket server
 def connect_to(host, port):
+	"""
+	Connects to a socket server
+	"""
+	
 	try:
 		sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	except:

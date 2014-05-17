@@ -1,19 +1,24 @@
-# Camera handling
+"""
+Camera handling
+"""
 
 import cv2
 
-#-----------------------------
-# Merging two channels
 def make_anaglyph(first, second):
+	"""
+	Merge two images to create anaglyph image
+	"""
+	
 	a, b, c = cv2.split(first)
 	d, e, f = cv2.split(second)
 
 	return cv2.merge((a, f, e))
 
-#------------------------------
-# Returns true if two cameras are found
 def two_cameras():
-
+	"""
+	Returns True if two cameras are found
+	"""
+	
 	# Camera streams
 	CAPTURE_1 = cv2.VideoCapture(0)
 	CAPTURE_2 = cv2.VideoCapture(1)
