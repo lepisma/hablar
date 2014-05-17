@@ -14,134 +14,6 @@
    <string>Hablar | Chat</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>681</width>
-      <height>431</height>
-     </rect>
-    </property>
-    <property name="currentIndex">
-     <number>1</number>
-    </property>
-    <widget class="QWidget" name="tab">
-     <attribute name="title">
-      <string>Chat</string>
-     </attribute>
-    </widget>
-    <widget class="QWidget" name="tab_2">
-     <attribute name="title">
-      <string>Settings</string>
-     </attribute>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>30</y>
-        <width>661</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>28</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Welcome to hablar</string>
-      </property>
-      <property name="textFormat">
-       <enum>Qt::AutoText</enum>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>110</y>
-        <width>661</width>
-        <height>91</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Choose your desired settings for the session and hit Start Server.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;If you are connecting to someone else's session, type the server's IP and hit connect. &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Click close anytime to end session&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="Line" name="line">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>80</y>
-        <width>341</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="QGroupBox" name="groupBox">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>230</y>
-        <width>321</width>
-        <height>141</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Settings</string>
-      </property>
-      <widget class="QCheckBox" name="checkBox_3">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>70</x>
-         <y>40</y>
-         <width>191</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Enable Audio</string>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QCheckBox" name="checkBox_2">
-       <property name="geometry">
-        <rect>
-         <x>70</x>
-         <y>80</y>
-         <width>121</width>
-         <height>18</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Enable 3D</string>
-       </property>
-      </widget>
-     </widget>
-    </widget>
-   </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
@@ -152,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Start Server</string>
+     <string>Start Session</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
