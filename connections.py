@@ -11,13 +11,14 @@ class MasterThread(threading.Thread):
 	Threads to be spawned on the master end of chat session
 	"""
 	
-	def __init__(self, conn, mode):
+	def __init__(self, conn, mode, qt_label):
 		"""
 		Takes the connection object and mode of data transfer
 		"""
 		
 		self.conn = conn
 		self.mode = mode
+		self.label = qt_label
 		threading.Thread.__init__(self)
 		
 	def run(self):
@@ -27,7 +28,7 @@ class MasterThread(threading.Thread):
 		"""
 		
 		if self.mode == 'receive':
-			camera.stream_from(self.conn)
+			camera.stream_from(self.conn, self.label)
 		elif self.mode == 'send':
 			camera.stream_to(self.conn)
 			
@@ -37,7 +38,7 @@ class ClientThread(threading.Thread):
 	Threads running on client side
 	"""
 	
-	def __init__(self, host, port, mode):
+	def __init__(self, host, port, mode, qt_label):
 		"""
 		Takes host and port of master and direction of data transfer
 		"""
@@ -45,6 +46,7 @@ class ClientThread(threading.Thread):
 		self.host = host
 		self.port = port
 		self.mode = mode
+		self.label = qt_label
 		threading.Thread.__init__(self)
 		
 	def run(self):
@@ -59,4 +61,4 @@ class ClientThread(threading.Thread):
 		if self.mode == 'send':
 			camera.stream_to(conn)
 		elif self.mode == 'receive':
-			camera.stream_from(conn)
+			camera.stream_from(conn, self.label)

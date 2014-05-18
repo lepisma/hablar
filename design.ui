@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>701</width>
-    <height>510</height>
+    <width>712</width>
+    <height>581</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Hablar | Chat</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="start_button">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>450</y>
+      <y>520</y>
       <width>111</width>
       <height>51</height>
      </rect>
@@ -27,11 +27,11 @@
      <string>Start Session</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="close_button">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>450</y>
+      <x>600</x>
+      <y>520</y>
       <width>101</width>
       <height>51</height>
      </rect>
@@ -43,8 +43,8 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>450</y>
+      <x>140</x>
+      <y>520</y>
       <width>451</width>
       <height>51</height>
      </rect>
@@ -55,7 +55,7 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="connect_button">
      <property name="geometry">
       <rect>
        <x>350</x>
@@ -68,7 +68,7 @@
       <string>Connect</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="ip">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -78,6 +78,25 @@
       </rect>
      </property>
     </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>671</width>
+      <height>480</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>640</width>
+      <height>480</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
   </widget>
  </widget>

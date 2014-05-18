@@ -4,6 +4,7 @@ Camera handling
 
 import cv2
 import numpy
+from PyQt4 import QtGui
 
 def make_anaglyph(first, second):
 	"""
@@ -45,7 +46,7 @@ def two_cameras():
 		
 		return True
 		
-def stream_from(conn):
+def stream_from(conn, qt_label):
 	"""
 	Streams video data from a socket and displays it
 	"""
@@ -62,7 +63,10 @@ def stream_from(conn):
 			numpy_data = numpy.fromstring(image_string, dtype = 'uint8')
 			image_string = ''
 			image = cv2.imdecode(numpy_data, 1)
-			cv2.imshow('Stream', image)
+			image = convert_image_to_qt(image)
+			qt_label.setPixmap(image)
+			qt_label.setScaledContents(true)
+			
 			if cv2.waitKey(20) == 27:
 				conn.close()
 				break
@@ -108,3 +112,14 @@ def stream_to(conn):
 			ret_2, frame_2 = CAPTURE_2.read()
 		else:
 			ret_2 = True
+			
+def convert_image_to_qt(image):
+	"""
+	Converts opencv image to qt image
+	"""
+	
+	image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+	height, width = image.shape[:2]
+	image = QtGui.QImage(image, width, height, QtGui.QImage.Format_RGB888)
+	image = QtGui.QPixmap.fromImage(image)
+	return image
