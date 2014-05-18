@@ -90,7 +90,7 @@ def stream_to(conn):
 		ret_2 = True
 		
 	while ret_1 and ret_2:
-		if CAMERAS = 2:
+		if CAMERAS == 2:
 			frame = make_anaglyph(frame1, frame2)
 		else:
 			frame = frame_1
@@ -104,7 +104,7 @@ def stream_to(conn):
 		conn.send('done')
 		
 		ret_1, frame_1 = CAPTURE_1.read()
-		if CAMERAS = 2:
+		if CAMERAS == 2:
 			ret_2, frame_2 = CAPTURE_2.read()
 		else:
 			ret_2 = True

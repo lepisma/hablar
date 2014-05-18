@@ -54,7 +54,7 @@ class ClientThread(threading.Thread):
 		"""
 		
 		conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		conn.connect((host, port))
+		conn.connect((self.host, self.port))
 		
 		if self.mode == 'send':
 			camera.stream_to(conn)
